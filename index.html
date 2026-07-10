@@ -134,6 +134,16 @@
         <p class="cursive-text">And, that's not all, Malaika ji..</p>
     </footer>
 
-    <script src="/script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    const envelope = document.getElementById("envelope");
+
+    if (!envelope) return;
+
+    envelope.addEventListener("click", () => {
+        envelope.classList.toggle("open");
+        });
+    });
+    </script>
 </body>
 </html>
