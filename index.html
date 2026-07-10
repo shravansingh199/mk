@@ -113,7 +113,7 @@
             <h2 class="section-title">Thoda Aur</h2>
             <p class="tap-hint">Click the envelope below to open the letter</p>
             
-            <div class="envelope-wrapper" id="envelope">
+            <div class="envelope-wrapper" id="envelope" onclick="void(0)">
                 <div class="envelope">
                     <div class="flap"></div>
                     <div class="pocket"></div>
@@ -140,7 +140,13 @@
 
     if (!envelope) return;
 
-    envelope.addEventListener("click", () => {
+    envelope.addEventListener("click", (e) => {
+        // If the envelope is open and she taps inside the letter (to read/scroll),
+        // we prevent the envelope from closing.
+        if (envelope.classList.contains("open") && e.target.closest("#letter")) {
+            return;
+        }
+        
         envelope.classList.toggle("open");
         });
     });
