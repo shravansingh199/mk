@@ -227,6 +227,8 @@ body {
     border-radius: 4px;
     cursor: pointer;
     box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    pointer-events: auto; /* 👈 ADD THIS */
+    touch-action: manipulation; /* 👈 ADD THIS (removes double-tap delay on mobile) */
 }
 
 .envelope {
@@ -247,6 +249,7 @@ body {
     transform-origin: top;
     transition: transform 0.4s ease 0.4s, z-index 0.2s ease 0.4s;
     z-index: 3;
+    pointer-events: none; /* 👈 ADD THIS */
 }
 
 .envelope .pocket {
@@ -260,6 +263,7 @@ body {
     border-bottom: 90px solid #dcd3b0;
     border-radius: 0 0 4px 4px;
     z-index: 2;
+    pointer-events: none; /* 👈 ADD THIS */
 }
 
 .letter {
