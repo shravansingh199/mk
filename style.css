@@ -309,10 +309,12 @@ body {
 }
 
 .envelope-wrapper.open .letter {
-    transform: translateY(-100px);
+    transform: translateY(-120px); /* Lift it slightly higher so it clears the pocket */
     z-index: 4;
-    height: auto; /* Allow text to be fully legible when pulled out */
-    min-height: 200px;
+    height: auto; 
+    max-height: 400px; /* Gives it a limit but allows scrolling if text is long */
+    overflow-y: auto;  /* Lets Malaika scroll the letter text on her phone if needed */
+    min-height: 220px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.15);
     transition: transform 0.4s ease 0.4s, z-index 0s ease 0.4s;
 }
