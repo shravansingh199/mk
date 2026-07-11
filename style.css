@@ -348,3 +348,10 @@ body {
     .lined-paper { padding: 15px; border-left: 10px solid #efeae0; }
     .love-list li { font-size: 1.3rem; }
 }
+
+.custom-heart {
+    color: var(--accent-red); /* Automatically uses your exact dusty rose color! */
+    font-size: 1.2rem;
+    display: inline-block;
+    vertical-align: middle;
+}
