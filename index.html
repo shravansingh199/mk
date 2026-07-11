@@ -134,22 +134,6 @@
         <p class="cursive-text">And, that's not all, Malaika ji..</p>
     </footer>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-    const envelope = document.getElementById("envelope");
-
-    if (!envelope) return;
-
-    envelope.addEventListener("click", (e) => {
-        // If the envelope is open and she taps inside the letter (to read/scroll),
-        // we prevent the envelope from closing.
-        if (envelope.classList.contains("open") && e.target.closest("#letter")) {
-            return;
-        }
-        
-        envelope.classList.toggle("open");
-        });
-    });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
