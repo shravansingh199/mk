@@ -355,3 +355,107 @@ body {
     display: inline-block;
     vertical-align: middle;
 }
+
+/* --- Scattered & Floating Paper Heart Design --- */
+
+/* Base setup for the flat-cut paper heart shape */
+.paper-heart {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: var(--accent-red);
+    transform: rotate(-45deg);
+    filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, 0.1));
+    pointer-events: none;
+    z-index: 1;
+    /* Base animation setup */
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+/* Creating the rounded lobes of the heart */
+.paper-heart::before,
+.paper-heart::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: var(--accent-red);
+    border-radius: 50%;
+}
+
+.paper-heart::before { top: -25px; left: 0; }
+.paper-heart::after { left: 25px; top: 0; }
+
+/* --- Individual Heart Positions, Sizes, and Specific Animations --- */
+
+/* Top Left - Slow, gentle sway */
+.heart-1 {
+    top: 15%;
+    left: 10%;
+    opacity: 0.12;
+    transform: scale(0.9);
+    animation: float-sway-left 7s infinite ease-in-out;
+}
+
+/* Mid Left - Faster, bouncy float */
+.heart-2 {
+    top: 55%;
+    left: 18%;
+    opacity: 0.08;
+    transform: scale(0.6);
+    animation: float-up-down 5s infinite ease-in-out;
+}
+
+/* Top Right - Large, slow drifting */
+.heart-3 {
+    top: 20%;
+    right: 12%;
+    opacity: 0.15;
+    transform: scale(1.2);
+    animation: float-sway-right 9s infinite ease-in-out;
+}
+
+/* Mid Right - Relaxed float */
+.heart-4 {
+    bottom: 35%;
+    right: 8%;
+    opacity: 0.1;
+    transform: scale(0.8);
+    animation: float-up-down 6.5s infinite ease-in-out;
+}
+
+/* Bottom Center-Left - Tiny subtle accent */
+.heart-5 {
+    bottom: 18%;
+    left: 40%;
+    opacity: 0.07;
+    transform: scale(0.5);
+    animation: float-sway-left 8s infinite ease-in-out;
+}
+
+/* --- Floating Animation Keyframes --- */
+
+/* 1. Gentle Up and Down drifting */
+@keyframes float-up-down {
+    0%, 100% { transform: translateY(0) rotate(-45deg); }
+    50% { transform: translateY(-15px) rotate(-42deg); }
+}
+
+/* 2. Left side swaying & rotating slightly */
+@keyframes float-sway-left {
+    0%, 100% { transform: translate(0, 0) rotate(-35deg); }
+    50% { transform: translate(-10px, -20px) rotate(-40deg); }
+}
+
+/* 3. Right side swaying & rotating slightly */
+@keyframes float-sway-right {
+    0%, 100% { transform: translate(0, 0) rotate(-55deg); }
+    50% { transform: translate(10px, -15px) rotate(-50deg); }
+}
+
+/* Keep header elements perfectly layered on top */
+.cursive-title, .subtitle, .scroll-down {
+    position: relative;
+    z-index: 2;
+}
