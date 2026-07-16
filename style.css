@@ -471,6 +471,7 @@ body {
     align-items: center;
     position: relative;
     width: 100%;
+    overflow-x: hidden;
 }
 
 /* Repositioning the hearts specifically for the article page so they don't get buried */
