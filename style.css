@@ -470,17 +470,18 @@ body {
     flex-direction: column;
     align-items: center;
     position: relative;
+    width: 100%;
 }
 
 /* Repositioning the hearts specifically for the article page so they don't get buried */
 .article-page .heart-1 {
     top: 80px;
-    left: 21%;
+    left: 8%;
 }
 
 .article-page .heart-3 {
     top: 140px;
-    right: 21%;
+    right: 8%;
 }
 
 .article-header {
