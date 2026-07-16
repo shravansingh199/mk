@@ -472,26 +472,6 @@ body {
     position: relative;
 }
 
-/* Repositioning the hearts specifically for the article page so they don't get buried */
-.article-page .heart-1 {
-    top: 80px;
-    left: 8%;
-}
-
-.article-page .heart-3 {
-    top: 140px;
-    right: 8%;
-}
-
-/* Moving the 3rd heart safely to the upper mid-left so it stays visible */
-.article-page .heart-5 {
-    top: 450px; 
-    left: 12%;
-    bottom: auto; /* Overrides the bottom rule from the home page */
-    opacity: 0.09;
-    transform: scale(0.75);
-}
-
 .article-header {
     text-align: center;
     padding: 90px 20px 30px 20px;
