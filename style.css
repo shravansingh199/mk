@@ -475,12 +475,12 @@ body {
 /* Repositioning the hearts specifically for the article page so they don't get buried */
 .article-page .heart-1 {
     top: 80px;
-    left: 8%;
+    left: 11%;
 }
 
 .article-page .heart-3 {
     top: 140px;
-    right: 8%;
+    right: 11%;
 }
 
 .article-header {
