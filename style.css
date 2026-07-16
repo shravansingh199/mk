@@ -644,10 +644,10 @@ body {
 }
 
 .article-page .heart-1 {
-        left: 21%;
+        left: 13%;
     }
     .article-page .heart-3 {
-        right: 21%;
+        right: 13%;
     }
 
 @keyframes pulse-light {
