@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khwaab o Haqeeqat | For Malaika 💗</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Playfair+Display:ital,wght@0,600;1,400&family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="article-page">
+
+  <div class="paper-heart heart-1"></div>
+  <div class="paper-heart heart-3"></div>
+
+  <header class="article-header">
+    <span class="small-tag">Chapter III</span>
+    <h1 class="main-heading">Khwaab-o-Haqeeqat</h1>
+    <p class="article-subtitle">Sweetness Personified..</p>
+    <div class="header-divider"></div>
+  </header>
+
+  <main class="article-wrapper">
+    
+    <div class="handwritten-block">
+      Sweetuu, favorituu, or my world,<br>
+      It don't matter what I call you.<br>
+      <em>Aakhir khwaab chahiye hi kisey,<br>
+      Jab haqeeqat me tum ho.</em>
+    </div>
+
+    <p class="paragraph editorial dropcap">
+      She'll add colours, magic, sunshine into your dull life,<br>therefore, introducing life to its meaning. 
+    </p>
+
+    <div class="highlight-phrase">
+      "Jab dekhoge is khoobsoorat khwaab ko khuli aankhon se,<br>
+      Reality me sona bhool jaaoge."
+    </div>
+
+    <p class="paragraph editorial" style="text-align: center; font-style: italic;">
+      I'm a fan & admirer us pretty soul ka,<br>
+      Aneko khayaalon ki hai jo malika.
+    </p>
+
+    <div class="handwritten-block" style="text-align: center; border-left: none; border-bottom: 3px solid var(--accent-red); border-radius: 12px;">
+      She'll not warn you before sweetifying ur life.<br><br>
+      <span style="font-family: var(--heading-font); font-size: 2.2rem; color: var(--accent-red); font-weight: 700;">
+        The one and only, woh hai the beautiful Malaika 💗
+      </span>
+    </div>
+
+  </main>
+
+  <footer class="article-footer">
+    <a href="taareefein.html" class="back-home-btn">← Back to Taareefein</a> &nbsp;|&nbsp; 
+    <a href="index.html" class="back-home-btn">Home 🏡</a>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      function createPetal() {
+        const petal = document.createElement("div");
+        petal.innerHTML = "🌸";
+        petal.style.position = "fixed";
+        petal.style.top = "-20px";
+        petal.style.left = Math.random() * 100 + "vw";
+        petal.style.fontSize = Math.random() * 10 + 12 + "px";
+        petal.style.opacity = Math.random() * 0.5 + 0.3;
+        petal.style.pointerEvents = "none";
+        petal.style.zIndex = "9999";
+        petal.style.animation = "fall 6s linear forwards";
+        document.body.appendChild(petal);
+
+        setTimeout(() => { petal.remove(); }, 6000);
+      }
+      setInterval(createPetal, 2500);
+    });
+  </script>
+
+  <style>
+    @keyframes fall {
+      to {
+        transform: translateY(105vh) rotate(360deg);
+      }
+    }
+  </style>
+
+</body>
+</html>
