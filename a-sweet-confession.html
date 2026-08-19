@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Sweet Confession | For Malaika</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Dancing+Script:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --night-bg: #1a1823;
+      --card-bg: rgba(33, 30, 45, 0.75);
+      --text-glow: #f4e8db;
+      --accent-gold: #e2be7d;
+      --accent-rose: #d88a8a;
+      --subtext: #b8b3c3;
+      --serif-font: 'Cormorant Garamond', serif;
+      --cursive-alt: 'Dancing Script', cursive;
+      --sans-font: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--night-bg);
+      color: var(--text-glow);
+      font-family: var(--sans-font);
+      line-height: 1.8;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 40px 20px;
+      position: relative;
+      overflow-x: hidden;
+      /* Subtle dark gradient background */
+      background-image: radial-gradient(circle at 50% 20%, #292438 0%, #1a1823 80%);
+    }
+
+    /* Floating Glow Elements */
+    .glow-orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .orb-1 {
+      width: 250px;
+      height: 250px;
+      background: rgba(216, 138, 138, 0.15);
+      top: 10%;
+      left: 15%;
+    }
+
+    .orb-2 {
+      width: 300px;
+      height: 300px;
+      background: rgba(226, 190, 125, 0.12);
+      bottom: 15%;
+      right: 10%;
+    }
+
+    /* Container */
+    .confession-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(226, 190, 125, 0.2);
+      border-radius: 16px;
+      max-width: 680px;
+      width: 100%;
+      padding: 50px 40px;
+      margin-top: 20px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Header Styling */
+    .date-badge {
+      font-family: var(--sans-font);
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      opacity: 0.9;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .header-title {
+      font-family: var(--serif-font);
+      font-size: 2.8rem;
+      font-weight: 600;
+      color: var(--text-glow);
+      margin-bottom: 25px;
+      letter-spacing: 0.5px;
+    }
+
+    .divider {
+      width: 50px;
+      height: 1px;
+      background: var(--accent-gold);
+      opacity: 0.4;
+      margin-bottom: 35px;
+    }
+
+    /* Poem Content Formatting */
+    .intro-stanza {
+      font-family: var(--serif-font);
+      font-size: 1.35rem;
+      font-style: italic;
+      color: var(--accent-gold);
+      margin-bottom: 35px;
+      line-height: 1.7;
+    }
+
+    .poetry-block {
+      font-family: var(--serif-font);
+      font-size: 1.3rem;
+      line-height: 1.9;
+      color: var(--text-glow);
+      margin-bottom: 35px;
+      padding-left: 15px;
+      border-left: 2px solid rgba(216, 138, 138, 0.4);
+    }
+
+    .highlight-stanza {
+      font-family: var(--cursive-alt);
+      font-size: 2.2rem;
+      color: var(--accent-rose);
+      line-height: 1.5;
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    .final-stanza {
+      font-family: var(--serif-font);
+      font-size: 1.25rem;
+      line-height: 1.8;
+      color: var(--subtext);
+      background: rgba(255, 255, 255, 0.03);
+      padding: 25px;
+      border-radius: 10px;
+      border: 1px dashed rgba(226, 190, 125, 0.25);
+    }
+
+    /* Navigation Footer */
+    .page-footer {
+      margin-top: 40px;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .nav-btn {
+      color: var(--subtext);
+      text-decoration: none;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      transition: color 0.3s ease;
+    }
+
+    .nav-btn:hover {
+      color: var(--accent-gold);
+    }
+
+    /* Responsive Spacing */
+    @media (max-width: 600px) {
+      .confession-card {
+        padding: 35px 22px;
+      }
+      .header-title {
+        font-size: 2.2rem;
+      }
+      .highlight-stanza {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+
+  <main class="confession-card">
+    
+    <span class="date-badge">18 August, 2026</span>
+    <h1 class="header-title">A Sweet Confession</h1>
+    <div class="divider"></div>
+
+    <div class="intro-stanza">
+      You know yeh jo bhi main likhta hoon<br>
+      Yeh ek bahaana bhi hota hai<br>
+      Tumse baatein karne ka..<br><br>
+      So, here goes on more
+    </div>
+
+    <div class="poetry-block">
+      Nahi chahiye woh lamha<br>
+      Jisme tumhara khayaal na ho<br>
+      Na chaahat hai us pal ki<br>
+      Jahan tum exist na karo
+    </div>
+
+    <div class="highlight-stanza">
+      Tum kya jaano yeh jahaan kitna roshan hai<br>
+      Tumhare pal bhar thehar jaane se<br>
+      Kuch lamha ruk jaane se<br>
+      Kuch pal sang bitaane se
+    </div>
+
+    <div class="final-stanza">
+      The moments<br><br>
+      They keep replaying when you're gone<br>
+      Bringing you back in my thoughts<br>
+      Missing you until you return again<br>
+      Giving me precious moments, more than I ever thought!
+    </div>
+
+  </main>
+
+  <footer class="page-footer">
+    <div class="nav-links">
+      <a href="khwaab-o-haqeeqat.html" class="nav-btn">← Back to Khwaab o Haqeeqat</a>
+      <span style="color: var(--subtext); opacity: 0.4;">|</span>
+      <a href="index.html" class="nav-btn">Home 🏡</a>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const sparkles = ["✨", "⭐", "💫", "🌟"];
+
+      function createSparkle() {
+        const star = document.createElement("div");
+        star.innerHTML = sparkles[Math.floor(Math.random() * sparkles.length)];
+        star.style.position = "fixed";
+        star.style.bottom = "-20px";
+        star.style.left = Math.random() * 100 + "vw";
+        star.style.fontSize = Math.random() * 8 + 10 + "px";
+        star.style.opacity = Math.random() * 0.6 + 0.2;
+        star.style.pointerEvents = "none";
+        star.style.zIndex = "9999";
+        star.style.animation = "floatUp " + (Math.random() * 4 + 5) + "s linear forwards";
+        document.body.appendChild(star);
+
+        setTimeout(() => { star.remove(); }, 9000);
+      }
+
+      setInterval(createSparkle, 2000);
+    });
+  </script>
+
+  <style>
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+      20% {
+        opacity: 0.7;
+      }
+      80% {
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(-105vh) rotate(180deg);
+        opacity: 0;
+      }
+    }
+  </style>
+
+</body>
+</html>
