@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>She is love ♥</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-gradient: radial-gradient(circle at 50% 15%, #2a1625 0%, #130c14 85%);
+      --card-bg: rgba(35, 20, 32, 0.78);
+      --border-glow: rgba(224, 130, 150, 0.25);
+      --text-main: #f7ebe8;
+      --text-muted: #c9b5be;
+      --accent-pink: #e88b9e;
+      --accent-crimson: #d64563;
+      --accent-gold: #f3ce90;
+      --serif-font: 'Playfair Display', serif;
+      --body-font: 'Cormorant Garamond', serif;
+      --cursive-font: 'Dancing Script', cursive;
+      --sans-font: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #130c14;
+      background-image: var(--bg-gradient);
+      color: var(--text-main);
+      font-family: var(--body-font);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 50px 20px;
+      position: relative;
+      overflow-x: hidden;
+      line-height: 1.8;
+    }
+
+    .glow-orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(100px);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .orb-1 {
+      width: 320px;
+      height: 320px;
+      background: rgba(214, 69, 99, 0.18);
+      top: 5%;
+      left: 10%;
+    }
+
+    .orb-2 {
+      width: 350px;
+      height: 350px;
+      background: rgba(232, 139, 158, 0.14);
+      bottom: 10%;
+      right: 10%;
+    }
+
+    .love-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border-glow);
+      border-radius: 20px;
+      max-width: 720px;
+      width: 100%;
+      padding: 55px 45px;
+      margin-top: 20px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(214, 69, 99, 0.1);
+      position: relative;
+      z-index: 2;
+    }
+
+    .header-tag {
+      font-family: var(--sans-font);
+      font-size: 0.85rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--accent-pink);
+      opacity: 0.9;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .main-title {
+      font-family: var(--serif-font);
+      font-size: 3.2rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+      text-shadow: 0 0 20px rgba(232, 139, 158, 0.2);
+    }
+
+    .header-divider {
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent-crimson), var(--accent-gold));
+      margin-bottom: 35px;
+      border-radius: 2px;
+    }
+
+    .p-text {
+      font-size: 1.35rem;
+      color: var(--text-main);
+      margin-bottom: 26px;
+      text-align: justify;
+      line-height: 1.95;
+    }
+
+    .p-text.dropcap::first-letter {
+      font-family: var(--serif-font);
+      font-size: 3.8rem;
+      float: left;
+      margin-right: 12px;
+      line-height: 0.85;
+      color: var(--accent-pink);
+      font-weight: 700;
+      margin-top: 4px;
+    }
+
+    .quote-box {
+      background: rgba(214, 69, 99, 0.08);
+      border-left: 3px solid var(--accent-pink);
+      padding: 22px 28px;
+      border-radius: 0 12px 12px 0;
+      margin: 35px 0;
+    }
+
+    .quote-box p {
+      font-family: var(--body-font);
+      font-size: 1.4rem;
+      font-style: italic;
+      color: var(--text-main);
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    .imprinted-line {
+      font-family: var(--cursive-font);
+      font-size: 2.5rem;
+      color: var(--accent-gold);
+      text-align: center;
+      margin: 40px 0;
+      line-height: 1.5;
+      text-shadow: 0 0 12px rgba(243, 206, 144, 0.3);
+      padding: 15px 0;
+      border-top: 1px dashed rgba(243, 206, 144, 0.25);
+      border-bottom: 1px dashed rgba(243, 206, 144, 0.25);
+    }
+
+    .ps-block {
+      font-size: 1.2rem;
+      line-height: 1.85;
+      color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.025);
+      padding: 28px;
+      border-radius: 12px;
+      border: 1px solid rgba(232, 139, 158, 0.2);
+      margin-top: 40px;
+    }
+
+    .ps-block strong {
+      color: var(--accent-pink);
+      font-family: var(--sans-font);
+      font-size: 0.95rem;
+      letter-spacing: 1.5px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .page-footer {
+      margin-top: 50px;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .nav-btn {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-family: var(--sans-font);
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      padding: 10px 22px;
+      border-radius: 25px;
+      border: 1px solid rgba(232, 139, 158, 0.25);
+      transition: all 0.3s ease;
+      background: rgba(35, 20, 32, 0.5);
+    }
+
+    .nav-btn:hover {
+      color: var(--accent-pink);
+      border-color: var(--accent-pink);
+      box-shadow: 0 0 15px rgba(232, 139, 158, 0.2);
+      background: rgba(214, 69, 99, 0.1);
+    }
+
+    @media (max-width: 600px) {
+      .love-card {
+        padding: 35px 22px;
+      }
+      .main-title {
+        font-size: 2.4rem;
+      }
+      .p-text {
+        font-size: 1.2rem;
+      }
+      .imprinted-line {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+
+  <main class="love-card">
+    
+    <span class="header-tag">August 21, 2026</span>
+    <h1 class="main-title">She is love ♥</h1>
+    <div class="header-divider"></div>
+
+    <p class="p-text dropcap">
+      It was early this morning when she came online around one o'clock. I was feeling sleepy, but I completely forgot about my state as soon as she appeared, pretty usual stuff, right?
+    </p>
+
+    <div class="quote-box">
+      <p>
+        Can you imagine how lucky I feel when she says that my texts made her smile?
+      </p>
+    </div>
+
+    <p class="p-text">
+      Cloud nine was calling me multiple times today. There was no such intention of using any of the magical words just yet, NOT AT ALL.
+    </p>
+
+    <p class="p-text">
+      As I sit here writing this at 11am (same day), it's hard to gather my thoughts when there are so many flooding in at once.
+    </p>
+
+    <p class="p-text">
+      She did repeat the same question which she asked in the very beginning of our lovely connection. Long or short? My response was same.
+    </p>
+
+    <p class="p-text">
+      I didn't tell her that a couple of days ago, I was just recording myself saying, "I wanna be with you, Malaika." I never sent it to her, but today, surprisingly, I actually said it to her. I also tried to explain how I truly feel about her, which proved to be so difficult, almost impossible, really. Maybe that's why people say some feelings just can't be described with mere words.
+    </p>
+
+    <p class="p-text">
+      For the first time, I genuinely felt the limitation of words. Even so, stubborn as I am, I kept trying. But why was I even trying for the same? Wrong question! Why wouldn't I want her to know? She’s a part of me. Or maybe she’s me, and I’m her.
+    </p>
+
+    <p class="p-text">
+      And why would I feel hurt if she chooses to cut her hair short? Her happiness, comfort, and preferences are mine, too. But I get it now, she wanted to know what I preferred.
+    </p>
+
+    <p class="p-text">
+      According to her, she finds her hair irritating sometimes. What can I say? It's her hair. Everything about her is precious to me.
+    </p>
+
+    <p class="p-text">
+      Anyway, I was trying to let her know how I truly feel about her and how I want her in my life, but in the process, I was literally at a loss for words! Oh, and one more thing, it was the first time I deliberately tried to flirt with her, taking advantage of her complaining about her hair irritating her. (I'm using 'HER' way too much here, but hey, I am HER, lol!)
+    </p>
+
+    <p class="p-text">
+      I even brought electromagnetism into it, HAHA! She definitely makes my current go alternating! But actually, NO, my current is constantly increasing, and it's unidirectional i.e. originating from me and heading straight to HER! Plus, her magnetic field is just way too strong for me!
+    </p>
+
+    <div class="imprinted-line">
+      "agar aa sakte ho toh kitna acchha hota.."
+    </div>
+
+    <p class="p-text">
+      It's now imprinted on my heart &lt;3
+    </p>
+
+    <p class="p-text">
+      She clearly had a clue about what I was trying to explain, even though I hadn't planned on using those specific words. After all, why would I need a fixed set of few words to express my desire for her? And yes, she was right, I was indeed scared to ever say those words to her. Scared of how she might react, or worse, she might go away from me :(
+    </p>
+
+    <p class="p-text">
+      But her mentioning of the clue was enough to give me courage I needed to finally say those words. (I kinda get now why those words, in the specific arrangement are called magical words)
+    </p>
+
+    <p class="p-text">
+      Finally, from being terrified to actually receiving her message saying those exact words back, IT IS just overwhelming! Yeh toh sach me door door tak sapne me bhi nahi sochta.. but then again, who actually thinks in their dreams anyway, LOL!
+    </p>
+
+    <div class="ps-block">
+      <strong>P.S.</strong>
+      We so often take two distinct world lines crossing, whether in person or virtually (which is a part of real life too), for granted. We rarely grasp how nearly impossible it is to ever meet again. But what if that single intersection gets true meaning, entangling the two lines together forever?
+    </div>
+
+  </main>
+
+  <footer class="page-footer">
+    <div class="nav-links">
+      <a href="20-aug-2026.html" class="nav-btn">← She's happiness</a>
+      <a href="index.html" class="nav-btn">Back to Journal 🏠</a>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const heartSymbols = ["💖", "💗", "✨", "💕", "🌸"];
+
+      function createFloatingHeart() {
+        const heart = document.createElement("div");
+        heart.innerHTML = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+        heart.style.position = "fixed";
+        heart.style.bottom = "-25px";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = Math.random() * 12 + 12 + "px";
+        heart.style.opacity = Math.random() * 0.6 + 0.2;
+        heart.style.pointerEvents = "none";
+        heart.style.zIndex = "9999";
+        heart.style.animation = "floatHeart " + (Math.random() * 4 + 6) + "s linear forwards";
+        document.body.appendChild(heart);
+
+        setTimeout(() => { heart.remove(); }, 10000);
+      }
+
+      setInterval(createFloatingHeart, 1800);
+    });
+  </script>
+
+  <style>
+    @keyframes floatHeart {
+      0% {
+        transform: translateY(0) rotate(0deg) scale(0.8);
+        opacity: 0;
+      }
+      20% {
+        opacity: 0.7;
+      }
+      80% {
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(-108vh) rotate(360deg) scale(1.2);
+        opacity: 0;
+      }
+    }
+  </style>
+
+</body>
+</html>
