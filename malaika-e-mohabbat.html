@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Malaika-e-Mohabbat | For Malaika ♥</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-dark: #121212;
+      --card-bg: #1a1a1a;
+      --text-main: #f5f5f7;
+      --text-sub: #a1a1a6;
+      --accent-gold: #f0d3a7;
+      --accent-blush: #e4a5b0;
+      --accent-crimson: #c84b61;
+      --border-minimal: rgba(240, 211, 167, 0.18);
+      --font-editorial: 'Playfair Display', serif;
+      --font-cursive: 'Alex Brush', cursive;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-editorial);
+      line-height: 1.85;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 20px;
+      overflow-x: hidden;
+    }
+
+    /* Outer Wrapper */
+    .main-container {
+      max-width: 740px;
+      width: 100%;
+      position: relative;
+    }
+
+    /* Minimalist Luxury Card */
+    .editorial-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-minimal);
+      border-radius: 0px; /* Sharp minimalist geometry */
+      padding: 75px 60px;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+      position: relative;
+    }
+
+    /* Corner Accent Lines */
+    .editorial-card::before {
+      content: '';
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      width: 40px;
+      height: 40px;
+      border-top: 1px solid var(--accent-gold);
+      border-left: 1px solid var(--accent-gold);
+    }
+
+    .editorial-card::after {
+      content: '';
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      width: 40px;
+      height: 40px;
+      border-bottom: 1px solid var(--accent-gold);
+      border-right: 1px solid var(--accent-gold);
+    }
+
+    /* Header Section */
+    .header-section {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .date-badge {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      display: inline-block;
+      margin-bottom: 15px;
+      font-weight: 500;
+    }
+
+    .main-title {
+      font-family: var(--font-editorial);
+      font-size: 3.5rem;
+      font-weight: 400;
+      color: var(--text-main);
+      line-height: 1.15;
+      letter-spacing: 0.5px;
+    }
+
+    .title-cursive {
+      font-family: var(--font-cursive);
+      font-size: 4.5rem;
+      color: var(--accent-blush);
+      display: block;
+      margin-top: -15px;
+    }
+
+    /* Minimal Geometric Divider */
+    .geometric-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      margin: 30px 0 45px;
+    }
+
+    .divider-line {
+      height: 1px;
+      width: 100px;
+      background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+    }
+
+    .divider-square {
+      width: 6px;
+      height: 6px;
+      border: 1px solid var(--accent-gold);
+      transform: rotate(45deg);
+    }
+
+    /* Stanzas */
+    .stanza {
+      font-size: 1.25rem;
+      line-height: 2.1;
+      color: var(--text-main);
+      margin-bottom: 42px;
+      text-align: center;
+      font-weight: 400;
+    }
+
+    .stanza-highlight {
+      background: rgba(228, 165, 176, 0.04);
+      border-left: 1px solid var(--accent-blush);
+      border-right: 1px solid var(--accent-blush);
+      padding: 30px 25px;
+      margin: 45px 0;
+      font-style: italic;
+    }
+
+    .snap-ref-tag {
+      font-size: 0.78rem;
+      font-style: normal;
+      font-family: var(--font-sans);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      background: rgba(240, 211, 167, 0.08);
+      padding: 3px 12px;
+      border: 1px solid rgba(240, 211, 167, 0.25);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-left: 5px;
+    }
+
+    .stanza-english {
+      font-family: var(--font-sans);
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--text-sub);
+      line-height: 2.0;
+      letter-spacing: 0.3px;
+    }
+
+    .interactive-pinch {
+      display: inline-block;
+      cursor: pointer;
+      color: var(--accent-gold);
+      font-weight: 400;
+      border-bottom: 1px solid var(--accent-gold);
+      padding-bottom: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .interactive-pinch:hover {
+      color: var(--accent-blush);
+      border-bottom-color: var(--accent-blush);
+    }
+
+    /* Minimal Break Graphic */
+    .minimal-break {
+      text-align: center;
+      margin: 40px 0;
+      opacity: 0.4;
+    }
+
+    .minimal-break svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--accent-gold);
+    }
+
+    /* Love Declaration Box */
+    .love-declaration {
+      text-align: center;
+      margin: 60px 0 40px;
+      padding: 45px 20px;
+      border-top: 1px solid var(--border-minimal);
+      border-bottom: 1px solid var(--border-minimal);
+      background: rgba(240, 211, 167, 0.02);
+    }
+
+    .repeat-you {
+      font-family: var(--font-sans);
+      font-size: 1.05rem;
+      letter-spacing: 10px;
+      color: var(--accent-gold);
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    .big-love {
+      font-family: var(--font-editorial);
+      font-size: 3.4rem;
+      font-weight: 400;
+      color: var(--accent-blush);
+      letter-spacing: 3px;
+    }
+
+    /* P.S. Box */
+    .ps-box {
+      margin-top: 45px;
+      padding: 22px;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--text-sub);
+      text-align: center;
+      letter-spacing: 0.5px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      background: rgba(255, 255, 255, 0.015);
+    }
+
+    /* Navigation Links */
+    .footer-nav {
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .nav-btn {
+      color: var(--text-sub);
+      text-decoration: none;
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      padding: 12px 26px;
+      border: 1px solid var(--border-minimal);
+      background: var(--card-bg);
+      transition: all 0.3s ease;
+    }
+
+    .nav-btn:hover {
+      color: var(--accent-gold);
+      border-color: var(--accent-gold);
+      box-shadow: 0 0 20px rgba(240, 211, 167, 0.1);
+    }
+
+    /* Toast Notification */
+    .toast-msg {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--accent-blush);
+      color: #121212;
+      padding: 12px 28px;
+      border-radius: 0px;
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      opacity: 0;
+      transition: all 0.4s ease;
+      z-index: 9999;
+    }
+
+    .toast-msg.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    @media (max-width: 600px) {
+      .editorial-card {
+        padding: 50px 22px;
+      }
+      .main-title {
+        font-size: 2.5rem;
+      }
+      .title-cursive {
+        font-size: 3.5rem;
+      }
+      .stanza {
+        font-size: 1.1rem;
+      }
+      .big-love {
+        font-size: 2.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="main-container">
+    <main class="editorial-card">
+      
+      <header class="header-section">
+        <span class="date-badge">31 Aug, 2026</span>
+        <h1 class="main-title">Malaika-e-Mohabbat</h1>
+        <span class="title-cursive">♥</span>
+        
+        <div class="geometric-divider">
+          <div class="divider-line"></div>
+          <div class="divider-square"></div>
+          <div class="divider-line"></div>
+        </div>
+      </header>
+
+      <div class="stanza">
+        Main tumhe kaise likhu,<br>
+        Jab lafz tumhe bayaan karne ki haisiyat na rakhein<br>
+        Main kaise karu taareef tumhari properly,<br>
+        Jab har lafz pheeka pad jaaye tumhari shakhsiyat ke aage
+      </div>
+
+      <div class="stanza">
+        Agar tumhe nasha kahu,<br>
+        Toh sharaab mein woh baat nahi<br>
+        Ek aadat buri kahu?<br>
+        Par tum mujhe buri bilkul nahi lagti
+      </div>
+
+      <div class="minimal-break">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2z"/>
+        </svg>
+      </div>
+
+      <div class="stanza stanza-highlight">
+        Ek khila hua gulaab ka phool 
+        <span class="snap-ref-tag">📷 last snap ref</span><br>
+        Tumhare aage sharma jaaye<br>
+        Tumhe kya hi khabar hai,<br>
+        Jadoo tumhara mujhpe kis qadar chhaaye
+      </div>
+
+      <div class="stanza">
+        Zindagi se pyaar ki wajah tum ho,<br>
+        Mere har pal ka khayaal tum ho,<br>
+        Kya main tumhe chaahat kahu?
+      </div>
+
+      <div class="stanza">
+        Kyunki siwa tumhare kisi aur ki chaahat nahi hoti,<br>
+        Tumhari Adaa, tumhari hansi, tumhara koi bhi lamha,<br>
+        Ek alag se duniya hai meri
+      </div>
+
+      <div class="minimal-break">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2z"/>
+        </svg>
+      </div>
+
+      <div class="stanza stanza-english">
+        Just like this endless universe,<br>
+        Your worlds are endless too<br>
+        Each giving the joy in the degree,<br>
+        That no one can fully grasp ever!
+      </div>
+
+      <div class="stanza stanza-english">
+        If I make you feel special,<br>
+        You make my <em>har pal</em> special too!<br>
+        You can make someone live many years,<br>
+        In just one <em>lamha</em> of yours!
+      </div>
+
+      <div class="stanza stanza-highlight">
+        You're an inspiration for my creations,<br>
+        And also, meri Malaika-e-Mohabbat ♥
+      </div>
+
+      <div class="stanza stanza-english">
+        You can make someone question<br>
+        If this is a dream or a reality, very easily!<br>
+        <span class="interactive-pinch" id="pinchBtn">Pinch me.. No, punch me!! 💥</span>
+      </div>
+
+      <div class="stanza stanza-english">
+        What's sweeter than you? Nothing.<br>
+        What gives more happiness than you? Nothing.<br>
+        Who carries more charm than you? None.<br>
+        But I don't really care about others when I have you!
+      </div>
+
+      <div class="stanza">
+        A writer needs comparison to appreciate in some sort,<br>
+        And, that's why those comparisons..<br>
+        Only to find every single time that there's nothing but you.<br>
+        It's only you. Only you.
+      </div>
+
+      <div class="love-declaration">
+        <div class="repeat-you">YOU. YOU. YOU.</div>
+        <div class="big-love">I LOVE YOU!</div>
+      </div>
+
+      <div class="ps-box">
+        P.S. I've never drunk,<br>
+        But still, I'm confident of my assertions. 🥂✨
+      </div>
+
+    </main>
+
+    <footer class="footer-nav">
+      <a href="bless-you.html" class="nav-btn">← Bless You!</a>
+      <a href="index.html" class="nav-btn">Home 🏡</a>
+    </footer>
+  </div>
+
+  <div class="toast-msg" id="toastMsg">Nope, it's 100% reality! 🙈✨</div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const pinchBtn = document.getElementById("pinchBtn");
+      const toast = document.getElementById("toastMsg");
+
+      pinchBtn.addEventListener("click", () => {
+        toast.classList.add("show");
+        setTimeout(() => {
+          toast.classList.remove("show");
+        }, 3000);
+      });
+    });
+  </script>
+
+</body>
+</html>
